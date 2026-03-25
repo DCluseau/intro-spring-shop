@@ -12,4 +12,6 @@ public interface ArticleRepository extends JpaRepository<Article, Long> {
 	public List<Article> findByBrandAndPrice(String brand, double price);
 	public List<Article> findByCategoryId(Long categoryId);
 //	public List<Article> searchArticles(@Param("x") String kw, @Param("y")double price);
+	public List<Article> findByDescription(String name);
+	public List<Article> findByDescriptionContains(String name);
 }
