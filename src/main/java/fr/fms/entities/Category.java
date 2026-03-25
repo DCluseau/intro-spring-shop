@@ -64,5 +64,13 @@ public class Category implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	/*
+	 * Article not displayed to avoid errors
+	 */
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + "]";
+	}
 	
 }
