@@ -24,6 +24,9 @@ public class SpringShopJpaApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String...args) throws Exception{
+		/*
+		 * Create categories and articles
+		 */
 //		categoryRepository.save(new Category("Smartphone"));
 //		articleRepository.save(new Article("Samsung", "S9", 250));
 //		Category smartphone = categoryRepository.save(new Category("Smartphone"));
@@ -39,18 +42,42 @@ public class SpringShopJpaApplication implements CommandLineRunner {
 //		
 //		articleRepository.save(new Article("Asus", "R510", 600, pc));
 		
+		/*
+		 * Find an article by category id
+		 */
 		for(Article article : articleRepository.findByCategoryId(3L)) {
 			System.out.println(article);
 		}
+		/*
+		 * Find an article by description
+		 */
 		for(Article article : articleRepository.findByDescription("Ipad")) {
 			System.out.println(article);
 		}
+		/*
+		 * Find an article which description contains a given word
+		 */
 		for(Article article : articleRepository.findByDescriptionContains("pad")) {
 			System.out.println(article);
 		}
+		/*
+		 * Select all articles
+		 */
 		for(Article article : articleRepository.findAll()) {
 			System.out.println(article);
 		}
+		/*
+		 * Find an article by description and brand
+		 */
+		for(Article article : articleRepository.findByDescriptionAndBrand("R510", "Asus")) {
+			System.out.println(article);
+		}
+		
+		
+		
+		/*
+		 * Tried to search an Article by using "searchArticles"
+		 */
 //		for(Article article : articleRepository.searchArticles("sung", 250)) {
 //			System.out.println(article);
 //		}
