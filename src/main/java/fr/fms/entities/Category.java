@@ -13,26 +13,26 @@ import javax.persistence.OneToMany;
 public class Category implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
+
 	@OneToMany(mappedBy = "category")
 	private Collection<Article> articles;
 
 	public Category() {
-		// TODO Auto-generated constructor stub
+		
 	}
-	
+
 	public Category(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
-	
+
 	public Category(String name) {
 		this.name = name;
 	}
@@ -72,5 +72,5 @@ public class Category implements Serializable {
 	public String toString() {
 		return "Category [id=" + id + ", name=" + name + "]";
 	}
-	
+
 }
